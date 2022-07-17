@@ -9,7 +9,7 @@
 
 ## 언어
 ### Markdown
-   1. [md 기본](https://github.com/hani2057/TIL/blob/main/md_basic.md)
+   1. [md 기본](language/markdown/md_basic.md)
 
 <br>
 
