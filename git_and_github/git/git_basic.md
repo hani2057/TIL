@@ -1,12 +1,11 @@
 # GIT
 
 <aside>
-💡 git 안에 git이 있으면 안 된다.
+💡 git 안에 git이 있으면 안 된다. 
 
-- git으로 관리되고 있는 디렉토리 안에서 git init 하지 말 것
+git으로 관리되고 있는 디렉토리 안에서 git init 하지 말 것
 
 home directory에서 git init 하지 말 것 (용량제한, 너무 용량 크게 사용하지 말 것)
-
 </aside>
 
 ### git 사용하기
@@ -22,12 +21,12 @@ home directory에서 git init 하지 말 것 (용량제한, 너무 용량 크게
 
 ### git commands
 
-- git 명령어는 git 홈페이지 documents 또는 구글링 *문서검색능력이 중요하다!!
+- git 명령어는 git 홈페이지 documents 활용 또는 구글링 *문서검색능력이 중요하다!!
 - `git config`
     - 최초 1회 초기설정
     - git config —global user.name {user_name}
     - git config —global user.email {user_email}
-    - —global 플래그 없이 git config를 작성하면 해당 레포에만 적용됨
+    - —global 플래그 없이 git config를 작성 또는 --local 플래그를 사용하면 해당 레포에만 적용됨
     - `git config --global -l` 또는 `git config -l` 명령시 리스트 보여줌(설정된 내용들)
 - `git init`: git으로 관리하도록 초기화(initialize)
 - `git status`: 현상태 확인
@@ -62,13 +61,13 @@ home directory에서 git init 하지 말 것 (용량제한, 너무 용량 크게
             add textfile
         ```
         
-        - commit 뒤에 붙는 내용: commit id → 구분을 위한 것. 주로 앞의 4문자 정도로 따서 소통한다.
+        - commit 뒤에 붙는 내용: commit id → 구분을 위한 것. 주로 앞의 4문자 정도를 따서 소통한다.
         - HEAD → : 어떤 브랜치를 현재 바라보고(heading) 있는지 명시해줌. 해당 위치에서의 해당 브랜치의 로그를 보여준다.
         - commit한 작성자, 날짜
         - commit message
     - `git log --oneline` : 주요정보만 한 줄로 표시해줌
     - `git log -1`: 최근 한 개만 보임
-    - git log 나가는 방법: q 누르기
+    - git log 나가는 방법: q 누르기(VIM)
 - `git restore` : 변경사항을 변경 전 상태로 복원 (to discard changes in working directory)
     - `git restore --staged` : git add 이후에 staging area에서 working directory로 복원
 
@@ -298,20 +297,6 @@ $ git log --oneline --graph
 
 # 메모
 
-- 리눅스 커맨드(터미널)
-    - 터미널에서 깔끔하게 위로 올려 보기 단축키: `ctrl + l`
-    - `pwd`: 내 현재 위치 경로표시
-    - `mv`: 이름 변경 또는 이동
-- ls 커맨드로 확인시 이름 뒤에 /가 붙어있다면 디렉토리라는 뜻
-- `-`옵션과 `--`옵션의 차이
-    - “-”: UNIX
-        - UNIX options, which may be grouped and must be preceded by a dash.
-    - “—”: GNU
-        - BSD options, which may be grouped and must not be used with a dash.
-    - no dash: BSD
-        - GNU long options, which are preceded by two dashes.
-    - *여기서 UNIX, GNU, BSD는 모두 LINUX 기반 OS 이름임
-    - *-옵션(축약형)은 —옵션(서술형)의 줄임말인 경우가 많다
 - VIM
 - url은 띄어쓰기를 `_`가 아닌 `-`로 주로 사용한다. (컨벤션)
     - url로 사용시 기본 하이퍼텍스트에 밑줄이 들어감 헷갈릴 수 있음
