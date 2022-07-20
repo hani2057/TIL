@@ -11,6 +11,9 @@
 ### Pyton
 1. [코드스타일](language/python/codestyleguide.md)
 2. [기초_자료형](language/python/basic_datatype.md)
+3. [기초_표현식](language/python/basic_expression.md)
+4. [기초_함수](language/python/basic_function.md)
+5. [기초_모듈과 패키지](language/python/basic_module.md)
    
 ### Markdown
 1. [md 기본](language/markdown/md_basic.md)

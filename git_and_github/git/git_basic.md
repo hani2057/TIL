@@ -43,6 +43,10 @@ home directory에서 git init 하지 말 것 (용량제한, 너무 용량 크게
         - i 입력시 insert 모드가 되어(왼쪽아래에 표시됨) 입력 가능
         - 커밋메세지 입력 후 esc키를 눌러 인서트 모드 나갈 수 있음
         - :wq (write and quit, 저장하고 나감) 입력 후 엔터치면 완료됨
+    - *커밋메시지 수정하는 방법
+        - 커밋메시지는 수정할 일이 많이 발생하면 안 된다. 특히 push하고 난 이후에는 하지 말 것!!
+        - `git commit --ammend`
+        - i 눌러서 insert모드로 바꾸고 바꿀 커밋메시지 입력한 후 esc-:wq 입력하여 완료
 - `git log` : commit 기록을 확인
     - git log 명령시 표시되는 내용들
         
