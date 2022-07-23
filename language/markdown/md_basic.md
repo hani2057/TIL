@@ -20,7 +20,7 @@
     - `숫자+.+띄어쓰기`
 - tab을 통해 한 depth 안으로, shift+tab을 통해 한 depth 밖으로 이동 가능
 
-### Escape String(백슬래시)
+### Escape Seqeunce(백슬래시)
 
 - `\`
 - 마크다운 문법이 아닌 텍스트로 취급하게 해줌
@@ -60,3 +60,8 @@
 
 - `>+띄어쓰기` (노션에서는 “+띄어쓰기, >+띄어쓰기는 토글임)
 - 중첩도 된다.
+
+### 토글
+
+- markdown 에디터가 아닌 markdown은 토글을 지원하지 않음
+- html tag `<details></details>`를 사용하여 토글을 대신할 수 있음

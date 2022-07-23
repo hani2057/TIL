@@ -78,6 +78,16 @@ print(result) # 9
 ### 함수의 입력(Input)
 
 - Parameter: 함수를 정의할 때, 함수 내부에서 사용되는 변수
+    - Default Parameter
+        - 함수 선언시 기본값을 지정하여 함수 호출시 argument 값을 설정하지 않아도 되도록 함  
+        - 앞쪽에 위치한 parameterdp default값을 썼으면 그 뒤쪽 parameter에도 default값을 정해줘야 함         
+        ```python
+        def add(x, y=0):
+            return x + y
+        
+        add(2) # 2 ( = 2 + 0 )
+        ```
+
 - Argument: 함수를 호출할 때, 넣어주는 값
     - 함수 호출시 함수의 parameter를 통해 전달되는 값
     - Argument는 소괄호 안에 할당 func_name(argument)
@@ -97,45 +107,18 @@ print(result) # 9
         add(2, y=5)
         add(x=2, 5) -> Error 발생!
         ```
-        
-    - Default Arguments Values
-        - 기본값을 지정하여 함수 호출시 argument 값을 설정하지 않도록 함
-        
-        ```python
-        def add(x, y=0):
-            return x + y
-        
-        add(2) # 2 ( = 2 + 0 )
-        ```
-        
 
 ### 정해지지 않은 여러 개의 Arguments 처리
 
-- print 함수의 Arguments 개수가 변해도 잘 동작하는 이유는?
-    - 애스터리스크(Asterisk) 혹은 언패킹 연산자라고 불리는 * 덕분
-    - print(*objects, sep=’ ‘, end=’\n’, file=sys.stdout, flush=False)
-- 가변 인자(*args)
-    - 여러 개의 Positional Argument를 하나의 필수 parameter로 받아서 사용
-    - 몇 개의 Positional Argument를 받을지 모르는 함수를 정의할 때 유용
-    
-    ```python
-    def add(*args):
-        for arg in args:
-            print(arg)
-    
-    add(2)
-    add(2, 3, 4, 5)
-    ```
-    
 - 패킹 / 언패킹
     - 패킹: 여러 개의 데이터를 묶어서 변수에 할당하는 것
     - 언패킹: 시퀀스 속의 요소들을 여러 개의 변수에 나누어 할당하는 것
         
         ```python
-        numbers = (1, 2, 3, 4, 5) # 패킹
+        numbers = 1, 2, 3, 4, 5 # 패킹
         print(numbers) # (1, 2, 3, 4, 5)
         
-        numbers = (1, 2, 3, 4, 5)
+        numbers = [1, 2, 3, 4, 5]
         a, b, c, d, e = numbers # 언패킹
         print(a, b, c, d, e) # 1 2 3 4 5
         ```
@@ -144,7 +127,7 @@ print(result) # 9
         - 언패킹시 왼쪽의 변수에 asterisk(*)를 붙이면, 할당하고 남은 요소를 리스트에 담을 수 있음
         
         ```python
-        numbers = (1, 2, 3, 4, 5) # 패킹
+        numbers = [1, 2, 3, 4, 5]
         
         a, b, *rest = numbers # 1, 2를 제외한 나머지를 rest에 대입
         print(a, b, rest) # 1 2 [3, 4, 5]
@@ -152,9 +135,12 @@ print(result) # 9
         a, *rest, e = numbers # 1, 5를 제외한 나머지를 rest에 대입
         print(rest) # [2, 3, 4]
         ```
-        
-- Asterist(*)와 가변 인자
-    - *는 시퀀스 언패킹 연산자라고도 불리며, 말 그대로 시퀀스를 풀어헤치는 연산자
+
+- `Asterisk(*)`
+    - print 함수의 Arguments 개수가 변해도 잘 동작하는 이유는?
+        - `애스터리스크(Asterisk)` 혹은 `언패킹 연산자`라고 불리는 `*` 덕분
+        - print(*objects, sep=’ ‘, end=’\n’, file=sys.stdout, flush=False)
+    - `*`는 시퀀스 언패킹 연산자라고도 불리며, 말 그대로 시퀀스를 풀어헤치는 연산자
         - 주로 튜플이나 리스트를 언패킹하는 데 사용
         - *를 활용하여 가변 인자를 만들 수 있음
         
@@ -169,7 +155,19 @@ print(result) # 9
         <class 'tuple'>
         '''
         ```
-        
+- 가변 인자(*args)
+    - 여러 개의 Positional Argument를 하나의 필수 parameter로 받아서 사용 (하나의 튜플로 전달됨 - 패킹)
+    - 몇 개의 Positional Argument를 받을지 모르는 함수를 정의할 때 유용
+    
+        ```python
+        def add(*args):
+            for arg in args:
+                print(arg)
+    
+        add(2)
+        add(2, 3, 4, 5)
+        ```
+
 - 가변 인자 예시
     - packing을 통해 받은 모든 숫자들의 합을 구하는 함수 만들기
         
@@ -199,33 +197,33 @@ print(result) # 9
     - 몇 개의 키워드 인자를 받을지 모르는 함수를 정의할 때 유용
     - **kwargs는 딕셔너리로 묶여 처리되며, parameter에 **를 붙여 표현
     
-    ```python
-    def family(**kwargs):
-        for key, value in kwargs.items():
-            print(key, ":", value)
-    
-    family(father='아버지', mother='어머니', baby='아기')
-    '''
-    father : 아버지
-    mother : 어머니
-    baby : 아기
-    '''
-    # 여기서 father, mother, baby 자리의 키워드는 문자열이 아님에 주의!
-    ```
+        ```python
+        def family(**kwargs):
+            for key, value in kwargs.items():
+                print(key, ":", value)
+        
+        family(father='아버지', mother='어머니', baby='아기')
+        '''
+        father : 아버지
+        mother : 어머니
+        baby : 아기
+        '''
+        # 여기서 father, mother, baby 자리의 키워드는 문자열이 아님에 주의!
+        ```
     
     - 반드시 받아야 하는 키워드 인자와, 추가적인 키워드 인자를 구분해서 사용할 수 있음
     
-    ```python
-    def print_family_name(father, mother, **pets):
-        print("아버지 :", father)
-        print("어머니 :", mother)
-        if pets:
-            print("반려동물들...")
-            for species, name in pets.items():
-                print(f'{species} : {name}')
-    
-    print_family_name('아버지', '어머니', dog='멍멍이', cat='냥냥이')
-    ```
+        ```python
+        def print_family_name(father, mother, **pets):
+            print("아버지 :", father)
+            print("어머니 :", mother)
+            if pets:
+                print("반려동물들...")
+                for species, name in pets.items():
+                    print(f'{species} : {name}')
+        
+        print_family_name('아버지', '어머니', dog='멍멍이', cat='냥냥이')
+        ```
     
 - 가변 인자(*args)와 가변 키워드 인자(**kwargs) 동시 사용 예시
     
@@ -239,7 +237,53 @@ print(result) # 9
     
     print_family_name('아버지', '어머니', dog='멍멍이', cat='냥냥이')
     ```
+
+<aside>
+참고: *의 사용예시
+
+- 가로로 한 칸씩 띄워서 출력하기
+    ``` python
+    lst = [1, 2, 3, 4, 5]
+    print(*lst) # 1 2 3 4 5
+
+    # 아래 코드와 결과가 같다
+    for i in range(len(lst)):
+        print(i, end=' ') # 1 2 3 4 5
+    ```
+- 역순으로 한 줄씩 출력하기
+    ``` python
+    num = int(input())
+
+    for in in range(num, -1, -1):
+        print(i)
+
+    for i in range(num):
+        print(num - i)
+    ```
+- 역순으로 가로로 한 칸씩 띄워서 출력하기
+    ``` python 
+    # 패킹, 언패킹 tkdyd
+    num = int(input())
+    lst = list(range(num + 1))[::-1]
+    print(*lst)
+
+    # while문 사용
+    while num >= 0:
+        print(num, end=' ')
+        num -= 1
     
+    # 재귀 사용
+    def f(num):
+        print(num, end=' ')
+        if num == 0:
+            return
+        return f(num - 1)
+    f(num)
+    ```
+
+</aside>
+
+<br>
 
 # Python의 범위(Scope)
 
@@ -290,6 +334,19 @@ print(result) # 9
         print(a, b, c) # 10 1 3
     enclosed()
     pirnt(a, b) # 0 1
+    ```
+- 컨테이너의 경우 함수 내부에서 함수 바깥의 컨테이너 안의 값을 변경할 수 있음(컨테이너 수정 즉 재할당은 불가하지만 접근하여 내부 값 변경은 가능함)
+    ``` python
+    def f():
+        lst = [1, 2, 3]
+        num = 10
+        def g():
+            lst[0] = 3 # lst라는 list에 접근
+            num = 20 # 변수 선언
+        g()
+        print(lst) # [3, 2, 3]
+        print(num) # 10
+    f() 
     ```
     
 - global문
@@ -392,24 +449,36 @@ print(result) # 9
     - 단, 코드가 복잡해지면서 변수의 변경을 추적하기 어렵고, 예기치 못한 오류가 발생
     - 가급적 사용하지 않는 것을 권장하며, 함수로 값을 바꾸고자 한다면 항상 argument로 넘기고 리턴 값을 사용하는 것을 추천
 
+<br>
+
 # 함수 응용
 
 ### 내장 함수(Built-in Functions)
 
+- 내장 함수 목록 확인하기: `dir(__builtins__)`
 - map(function, iterable)
     - 순회 가능한 데이터 구조(iterable)의 모든 요소에 함수(function)를 적용하고, 그 결과를 map object로 반환
+    - (a, b, c) -> (f(a), f(b), f(c))
+        ``` python
+        def func(x):
+            return x**2
+        lst = [1, 2, 3]
+        print(list(map(func, lst)))
+
+        # map 과 lambda 같이 쓰기
+        print(list(map(lambda x : x**2, lst)))
+        ```
 - filter(function, iterable)
     - 순회 가능한 데이터 구조(iterable)의 모든 요소에 함수(function)를 적용하고, 그 결과가 True인 것들을 filter object로 반환
 - zip(*iterables)
     - 복수의 iterable을 모아 튜플을 원소로 하는 zip object를 반환
-    
-    ```python
-    girls = ['jane', 'ashley']
-    boys = ['justin', 'eric']
-    pair = zip(girls, boys)
-    print(pair, type(pair)) # <zip object at 0x000어쩌구> <class 'zip'>
-    print(list(pair)) # [('jane', 'justin'), ('ashley', 'eric')]
-    ```
+        ```python
+        girls = ['jane', 'ashley']
+        boys = ['justin', 'eric']
+        pair = zip(girls, boys)
+        print(pair, type(pair)) # <zip object at 0x000어쩌구> <class 'zip'>
+        print(list(pair)) # [('jane', 'justin'), ('ashley', 'eric')]
+        ```
     
 - lambda 함수
     - lambda [parameter] : 표현식
