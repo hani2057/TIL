@@ -142,6 +142,11 @@ print(keyword.kwlist)
     - and 연산은 첫번째 Falsy값을 반환하고, 모두 Truthy이면 마지막 값을 반환한다.
     - or 연산에서 첫번째 Truthy값을 반환하고, 모두 Falsy인 경우 마지막 값을 반환한다.
 
+### 멤버십 연산자
+- a in A
+- a not in A
+- 포함 여부를 확인해 boolean 값을 반환함
+
 ### 연산자 우선순위
 
 0.()을 통한 grouping
