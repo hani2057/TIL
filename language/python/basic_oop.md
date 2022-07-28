@@ -255,7 +255,16 @@ print(person1.name) # John
     person2 = Person('John')
     print(Person.count)
     ```
+- 클래스 메서드를 이용해서 인스턴스를 생성할 수도 있다.
     
+    ```python
+    class Person:
+        @classmethod
+        def create_instance(cls):
+            ins = cls()
+            return ins
+    ```
+
 <br>
 
 ## 스태틱 메서드(정적 메서드)
