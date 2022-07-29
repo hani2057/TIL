@@ -118,6 +118,7 @@ my_package/
         - POSIX - fish - $ source <venv>/bin/activate.fish
         - POSIX - sch/tcsh - $ source <venv>/bin/activate.csh
         - POSIX - PowerShell Core - $ <venv>/bin/Activate.ps1
+        - 윈도우 - bash - $ source <venv>/Scripts/activate
         - 윈도우 - cmd.exe - C:\> <venv>\Scripts\activate.bat
         - 윈도우 - PowerShell - PS C:\> <venv>\Scripts\Activate.ps1
     - 가상환경 비활성화는 $ deactivate 명령어를 사용
