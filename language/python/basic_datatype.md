@@ -254,7 +254,15 @@ print(keyword.kwlist)
     - - : 차집합
     - ^ : 대칭차집합
         - 합집합에서 교집합을 차집합
-    - 여집합 연산자는 없음  
+    - 여집합 연산자는 없음
+- set의 작동구조
+    - set 안에는 immutable한 값만 넣을 수 있다.
+    - set은 원소를 hash 방식으로 저장한다. 그래서 hash함수를 통과하였을 때 항상 같은 값만 나와야 하기 때문에 가변적인 값은 set의 원소로 포함할 수 없다.
+    
+    ```python
+    a = {[1, 2], 2, 3}
+    # TypeError: unhashable type: 'list'
+    ```    
 
 ### Dictionary
 

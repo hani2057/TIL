@@ -313,3 +313,30 @@ $ git log --oneline --graph
     - 변경사항을 github main 브랜치에 푸시하고 따라가도록 만들기 위해 git push -u 옵션을 사용한다. `git push -u origin main`
 - 구글 이미지검색 ‘git flow’ ← 작업방식 이해
 - bash 복사하기(ctrl + Insert) 붙여넣기(shift + Insert)
+
+<br>
+
+# Git - Branch & 공유 repository
+
+- git branch {branch name} : 브랜치 생성
+- git branch : 브랜치 목록 확인
+- git switch {branch name} : {branch name} 브랜치로 이동
+    - git checkout : switch + restore
+    - 맥의 경우 구버전 git이 기본적으로 깔려 있기 때문에 switch를 쓰려면 git 업데이트해야 함
+- git merge {branch name} : {branch name} 브랜치를 현재 위치한 브랜치로 머지함
+    
+    ```python
+    $ git log --oneline --graph
+    *   a12357d (HEAD -> main) Merge branch 'test'
+    |\
+    | * 3c9615d (test) 3rd commit
+    * | 07d2d2f 2nd commit
+    |/
+    * ce5b3ca 1st commit
+    ```
+    
+- git log —oneline -a —graph
+- git push origin {branch name}
+    - 해당하는 branch로 push함
+    - PR(pull request)가 생성됨
+    - confirm하면 master로 merge됨
