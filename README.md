@@ -22,12 +22,18 @@
 
 <br>
 
-## Git & Github
-### Git
-1. [Git 기본 명령어(init부터 pull까지)](git_and_github/git/git_basic.md)
+## CS
+### Network
+1. [컴퓨터 네트워크 기본](cs/cs_basic.md)
+2. [Application Layer](cs/app_layer.md)
+
 
 <br>
 
-## OS
-### Linux
-1. [Linux Command(Terminal)](tips/linux_cmd.md)
+## 기타
+### Git & Github
+1. [Git 기본 명령어(init부터 pull까지)](etc/git_and_github/git_basic.md)
+
+### Tips
+1. [Linux Command(Terminal)](etc/tips/linux_cmd.md)
+
