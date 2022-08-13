@@ -131,3 +131,89 @@
 ### Fast retransmit
 
 - 동일한 번호의 ACK가 3번 연달아 도착한다면 타이머가 터지기 전에도 해당 번호의 패킷이 유실되었다고 보아도 무방하다고 판단할 수 있다는 방식. (정상 + 3연속 duplicated ack ⇒ 총 4번 연속)
+
+<br>
+
+## Flow control
+
+- 데이터 전송량은 receiver의 receive buffer 내 여유공간(available space)의 크기에 맞춰 조절된다.
+- 여유공간의 크기에 대한 정보는 segment의 HEADER 내의 receiver buffer size 영역에 포함되어 전송된다.
+- 만약 receiver에서 여유공간이 하나도 없어 0으로 정보가 전송될 경우 sender는 주기적으로 데이터가 거의 없는 segment를 보내 해당 segment에 대한 ACK 피드백을 통해 여유공간이 생겼는지를 받아 체크한 뒤 여유공간이 확보되면 데이터를 전송한다.
+
+### Connection Management
+
+- TCP 3-way handshake 라고도 한다.(3번 왔다갔다 함)
+- 순서
+    1. 클라이언트가 서버에게 SYN 패킷를 보낸다.
+        - SYNbit = 1
+        - seq # = x
+    2. 서버가 클라이언트에게 SYNACK 를 보낸다. 
+        - SYNbit = 1
+        - seq # = y
+        - ACKbit = 1
+        - ACK # = x + 1
+    3. 클라이언트가 서버에게 SYNACK에 대한 ACK를 보낸다.
+        - ACKbit = 1
+        - ACK # = y + 1
+        - client-to-sever data가 포함될 수 있음(HTTP request)
+        - 이때부터 SYNbit는 0이 된다.
+- 2에서 클라이언트는 SYNACK로 서버가 살아있다는 것을, 3에서 서버는 ACK로 클라이언트가 살아있다는 것을 알 수 있다.
+
+### Closing TCP Connection
+
+- 순서
+    1. 클라이언트가 소켓을 닫고 client end system이 TCP FIN control segment를 서버에게 보낸다.
+    2. 서버가 클라이언트에게 FIN에 대한 ACK를 보낸다.
+    3. 서버가 소켓을 닫고 FIN을 보낸다.
+    4. 클라이언트가 서버에게 FIN에 대한 ACK를 보낸다.
+- 4의 ACK에서 에러가 발생하거나 유실될 경우를 대비해서 클라이언트는 ACK를 보낸 후 일정시간 기다렸다가 완전히 닫는다.
+
+<br>
+
+## Congestion control
+
+- sender는 receiver와 network 중 허용용량이 더 적은 것에 맞춰 데이터를 전송해야 한다.
+- TCP의 전송시스템 설계방식(재전송)으로 인해 네트워크 상태에 맞추지 않고 데이터를 전송할 경우 계속 상황이 악화되는 일이 발생함
+
+### Congestion control 방식
+
+- Network-assisted congestion control
+    - 네트워크(라우터)에서 현재 상태에 대한 정보를 제공
+    - 현실에서는 라우터는 전송을 최대한 빠르게 하는 기능에만 최적화되어 있기 때문에 이론으로만 존재하고 실제로 사용하지는 않음
+- End-end congestion control
+    - 라우터에서 정보를 받지 않고 sender와 receiver에서 segment가 전달되는 상태를 통해 네트워크 상태를 유추해서 전송량을 컨트롤
+    - 유추하는 방식이기 때문에 정확하지 않음
+    - 네트워크 성능을 위해 현실에서 채택하고 있는 방식
+
+### 3 main phases
+
+1. Slow Strat
+    - 처음엔 아주 작게(segment 1개) 시작하여 두배씩 증가시키며 데이터 전송량을 늘림
+    - MSS(Maximum Segment Size): 한 번에 보낼 수 있는 segment의 양으로 이걸 조절한다.
+2. Additive increase
+    - 특정시점(threshold)에 도달하면 linear하게 데이터 전송량(MSS)을 증가시킴
+3. Multiplicative decrease
+    - 패킷 유실이 감지되면 해당 시점으로부터 절반으로 데이터 전송량(MSS)을 줄여서 linear하게 데이터 전송량을 증가시킴
+    - 2와 3을 반복
+
+### TCP 전송 속도의 결정
+
+- Roughly, rate = CongWin / RTT (Bytes/sec)
+    - CongWin: Congestion Widow Size 즉 변화하는 데이터 전송량
+    - RTT: Round Trip Time
+- RTT는 모두 다르지만 그래도 일정한 값이기 때문에, 실제적으로 전송 속도를 결정하는 것은 CongWin 즉 네트워크이다.
+- 즉 네트워크가 붐비면 전송속도가 떨어지고 네트워크가 한산하면 전송속도가 올라간다.
+- 그 말은 다시 말하면 네트워크를 사용하는 사용자들에 의해 전송 속도가 결정된다는 말과도 같다.
+
+### TCP Tahoe vs. TCP Reno
+
+- Tahoe는 첫번째 개발된 버전, Reno는 이후 개발된 버전으로 현재 Reno를 사용한다.
+- 패킷 유실을 감지하는 두 가지 방법(Timeout, 3 duplicated ACK)에 대해
+    - Tahoe는 둘 모두의 경우에서 threshold를 절반으로 줄이는 방식으로 동작하고
+    - Reno는 3 duplicated ACK에 대해서는 threshold를 절반으로 줄이고, timeout이 발생할 경우에는 처음(slow start, 즉 segment 1개)부터 다시 시작한다.
+
+### TCP Fairness
+
+- 네트워크 엣지에 있는 컴퓨터들이 각각 독립적으로 congestion control을 하는 중 fairness가 보장되는가?
+    - → 답은 ‘그렇다'임
+- 단, 이것은 독립적인 TCP 전송 각각에 대한 fairness가 보장된다는 얘기로 한 컴퓨터가 여러개의 connection을 열어 사용할 경우 해당 유저가 네트워크를 더 많이 사용하게 된다.
