@@ -39,6 +39,7 @@
 2. [정렬(sort)](algorithm/sort.md)
 3. [검색(search)](algorithm/search.md)
 4. [2차원 배열](algorithm/matrix.md)
+5. [문자열 관련](algorithm/string.md)
 
 <br>
 
