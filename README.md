@@ -12,7 +12,7 @@
 1. [호이스팅](language/javascript/hoisting.md)
 
 React
-1. [기초개념](language/javascript/react_basic.md)
+1. [기초개념](language/javascript/react/react_basic.md)
 
 ### Pyton
 1. [코드스타일](language/python/codestyleguide.md)
@@ -23,6 +23,9 @@ React
 6. [기초_얕은복사, 깊은복사](language/python/basic_copy.md)
 7. [기초_객체 지향 프로그래밍](language/python/basic_oop.md)
    
+Django
+1. [기초개념](language/python/django/django_basic.md)
+
 ### Markdown
 1. [md 기본](language/markdown/md_basic.md)
 
