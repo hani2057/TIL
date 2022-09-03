@@ -81,3 +81,24 @@
     - ARP table: IP address와 MAC address를 매핑해둔 표
     - frame에서 MAC address를 몰라서 DHCP를 통해 알게 된 Gateway router의 IP address 정보로 frame을 전송하면, Gateway router는 ARP table을 통해 전송된 frame의 헤더에 기록된 IP 주소가 자신의 것이면 frame을 전송받는다.
     - ARP tabled의 IP address 와 MAC address column은 캐시값이다. TTL column의 시간이 지나면 expire 되고 다시 캐시함
+
+### Swtich
+
+- collision domain을 분리시켜준다.
+- 개별 host는 switch의 존재를 인식하지 않고 CSMA/CD로 frame을 전송한다.
+- Swtich Forwarding Table
+    - 스위치에 연결된 host들의 포트정보가 기록됨
+    - self-learning: switch learns wich hosts can be reached through which interfaces
+        - frame을 받으면 해당 host의 port를 learn
+        - destination location unknown: flool (from host를 제외한 모든 포트로 보냄)
+        - 응답이 도착하면 해당 host의 post를 learn
+    - TTL 있음
+- Interconnecting switches
+    - switches can be connected together
+    - LAN에 연결해야 하는 host가 늘어나면 스위치를 추가해서 서로 연결시켜주면 됨 (동일 서브넷에 host가 추가됨)
+
+<br>
+
+## Data center networks
+
+- 구글 등 거대 서비스의 데이터센터에 위치한 무수히 많은 서버들은 스위치로 연결되어 있음
