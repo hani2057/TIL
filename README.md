@@ -33,10 +33,13 @@ Django
 
 ## CS
 ### Network
-1. [컴퓨터 네트워크 기본](cs/cs_basic.md)
+1. [컴퓨터 네트워크 기본](cs/cs_network_basic.md)
 2. [Application Layer](cs/app_layer.md)
 3. [Transport Layer](cs/transport_layer.md)
 4. [Network Layer](cs/network_layer.md)
+   
+### OS(Operating System)
+1. [운영체제 기초: 컴퓨터 구조](cs/os_basic.md)
 
 <br>
 
