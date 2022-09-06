@@ -25,6 +25,7 @@ React
    
 Django
 1. [기초개념](language/python/django/django_basic.md)
+2. [Form & ModelForm](language/python/django/django_form_modelform.md)
 
 ### Markdown
 1. [md 기본](language/markdown/md_basic.md)
@@ -33,7 +34,7 @@ Django
 
 ## CS
 ### Network
-1. [컴퓨터 네트워크 기본](cs/cs_network_basic.md)
+1. [컴퓨터 네트워크 기본](cs/network_basic.md)
 2. [Application Layer](cs/app_layer.md)
 3. [Transport Layer](cs/transport_layer.md)
 4. [Network Layer](cs/network_layer.md)
