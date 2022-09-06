@@ -25,7 +25,8 @@ React
    
 Django
 1. [기초개념](language/python/django/django_basic.md)
-2. [Form & ModelForm](language/python/django/django_form_modelform.md)
+2. [Django로 DB제어 및 CRUD](language/python/django/django_db_crud.md)
+3. [Form & ModelForm](language/python/django/django_form_modelform.md)
 
 ### Markdown
 1. [md 기본](language/markdown/md_basic.md)
