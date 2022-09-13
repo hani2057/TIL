@@ -118,6 +118,7 @@
 
 ### 동기식 입출력과 비동기식 입출력
 
+- 프로세스 기준으로 I/O가 끝날 때까지 instruction을 수행하지 못하면 동기식, 그렇지 않으면 비동기식이다. 이때 CPU는 해당 프로세스가 들고 있을 수도 있고(구현 방법 1) 다른 프로세스나 OS에게 CPU를 넘겨줄 수도 있다(구현 방법 2)
 - 동기식 입출력 (synchronous I/O)
     - I/O 요청 후 입출력 잡업이 완료된 후에야 제어가 사용자 프로그램에 넘어감
     - 구현 방법 1
@@ -142,7 +143,7 @@
 - I/O를 수행하는 special instruction에 의해
 - Memory Mapped I/O에 의해
 
-![Screen Shot 2022-09-06 at 6.50.02 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f7215716-af18-460a-be4a-fb874ea05682/Screen_Shot_2022-09-06_at_6.50.02_PM.png)
+  ![Screen Shot 2022-09-06 at 6.50.02 PM.png](./images/os_memory_mapped_io.png)
 
 <br>
 
@@ -153,7 +154,7 @@
 - Secondary Storage
     - CPU가 직접 접근해서 사용 불가능(sector 단위로 접근)
 
-![Screen Shot 2022-09-06 at 6.50.54 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e38710f8-9440-49e7-812e-e1e10824f345/Screen_Shot_2022-09-06_at_6.50.54_PM.png)
+  ![Screen Shot 2022-09-06 at 6.50.54 PM.png](./images/os_storage_layer.png)
 
 - 위로 갈수록 속도가 빠른 매체를 사용, 단위당 코스트가 비싸 용량이 작음
 - 현대에서 일부 다르기도 하지만 전통적으로 primary는 휘발성, secondary는 비휘발성
@@ -200,4 +201,4 @@
 
 - 프로그램은 유저 모드와 커널 모드를 반복하면서 실행된다
 
-![Screen Shot 2022-09-06 at 7.45.03 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b8de8824-b602-4f00-9507-0958359f7fb9/Screen_Shot_2022-09-06_at_7.45.03_PM.png)
+  ![Screen Shot 2022-09-06 at 7.45.03 PM.png](./images/os_program_process.png)
