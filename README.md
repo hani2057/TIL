@@ -44,10 +44,11 @@ Django
 
 ### Network
 
-1. [컴퓨터 네트워크 기본](cs/network_basic.md)
-2. [Application Layer](cs/app_layer.md)
-3. [Transport Layer](cs/transport_layer.md)
-4. [Network Layer](cs/network_layer.md)
+1. [컴퓨터 네트워크 기본](cs/network/network_basic.md)
+2. [Application Layer](cs/network/app_layer.md)
+3. [Transport Layer](cs/network/transport_layer.md)
+4. [Network Layer](cs/network/network_layer.md)
+5. [Link Layer](cs/network/link_layer.md)
 
 ### OS(Operating System)
 
