@@ -64,6 +64,7 @@ Django
 4. [2차원 배열](algorithm/matrix.md)
 5. [문자열 관련](algorithm/string.md)
 6. [자료구조](algorithm/data_structure.md)
+7. [트리](algorithm/tree.md)
 
 <br>
 
