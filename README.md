@@ -53,6 +53,7 @@ Django
 ### OS(Operating System)
 
 1. [운영체제 기초: 컴퓨터 구조](cs/os_basic.md)
+2. [Process](cs/os/os_process.md)
 
 <br>
 
