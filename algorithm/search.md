@@ -164,21 +164,23 @@ while q:
 
 ## 참고
 
-백트래킹 관련 재귀함수에서는 함수 콜을 한 다음에 컨디션을 체크하지 말고
-함수 콜 전에 컨디션 체크하는 게 효율적이니 그렇게 습관 들이자
+1.  백트래킹 관련 재귀함수에서는 함수 콜을 한 다음에 컨디션을 체크하지 말고
+    함수 콜 전에 컨디션 체크하는 게 효율적이니 그렇게 습관 들이자
 
-```python
-# 즉 이렇게 하지 말고
-def func()
-    if not condition:
-        return
+        ```python
+        # 즉 이렇게 하지 말고
+        def func()
+            if not condition:
+                return
 
-    for 후보군:
-        func()
+            for 후보군:
+                func()
 
-# 이렇게 하자는 얘기
-def func():
-    for 후보군:
-        if condition:
-            func()
-```
+        # 이렇게 하자는 얘기
+        def func():
+            for 후보군:
+                if condition:
+                    func()
+        ```
+
+2.  bfs 할 때 `from collections import deque`를 이용해서 사용 가능하다. deque는 double ended queue이며, deck(데크, 덱)와 같이 발음한다(파이썬 공식문서). 파이썬에서 제공하는 빌트인 확장형 자료구조이며, 앞뒤로 열린 큐라서 스택과 큐를 커버하는 자료구조이다. 단 deque는 최소 필요 메모리 공간이 크니 사용에 주의할 것. 추가로, deque의 구현은 더블 링크드 리스트라서 앞뒤에서 추가 연산이 O(1)의 시간 복잡도를 가지는 듯.
