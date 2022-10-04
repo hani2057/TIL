@@ -34,6 +34,10 @@ Django
 3. [Form & ModelForm](language/python/django/django_form_modelform.md)
 4. [인증 시스템](language/python/django/django_auth_system.md)
 
+### SQL
+
+1. [SQL 기초개념](language/sql/sql_basic.md)
+
 ### Markdown
 
 1. [md 기본](language/markdown/md_basic.md)
