@@ -80,6 +80,7 @@ Django
 
 1. [Git 기본 명령어(init부터 pull까지) + conflict 해결](etc/git_and_github/git_basic.md)
 2. [Github repository 재사용하기](etc/git_and_github/github_repo_reuse.md)
+3. [Git 커밋 수정](etc/git_and_github/git_edit_commit.md)
 
 ### Tips
 
