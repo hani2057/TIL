@@ -19,7 +19,8 @@ React
 
 Vue
 
-1. [Vue router](language/javascript/vue/vue_router.md)
+1. [기초개념](language/javascript/vue/vue_basic.md)
+2. [Vue router](language/javascript/vue/vue_router.md)
 
 ### Pyton
 
