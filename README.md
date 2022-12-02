@@ -20,7 +20,8 @@ React
 Vue
 
 1. [기초개념](language/javascript/vue/vue_basic.md)
-2. [Vue router](language/javascript/vue/vue_router.md)
+2. [Vue CLI](language/javascript/vue/vue_cli.md)
+3. [Vue router](language/javascript/vue/vue_router.md)
 
 ### Pyton
 
