@@ -5,25 +5,36 @@
 
 <br>
 
+# TOC
+
+- [Language, etc.](#Language,-etc.)
+  - [Javascript](#Javascript)
+  - [Python](#Python)
+  - [SQL](#SQL)
+  - [Markdown](#Markdown)
+- [Library, Framework](#Library,-Framework)
+  - [React](#React)
+  - [Vue](#Vue)
+  - [Django](#Django)
+- [Git, etc.](#Git,-etc.)
+  - [Git](#Git)
+  - [Shell, Kernel](#Shell,-Kernel)
+- [CS](#CS)
+  - [Network](#Network)
+  - [OS(Operating System)](<#OS(Operating-System)>)
+- [Algorithm](#Algorithm)
+
+<br>
+
 # Contents
 
-## 언어
+## Language, etc.
 
 ### Javascript
 
 1. [호이스팅](language/javascript/hoisting.md)
 
-React
-
-1. [기초개념](language/javascript/react/react_basic.md)
-
-Vue
-
-1. [기초개념](language/javascript/vue/vue_basic.md)
-2. [Vue CLI](language/javascript/vue/vue_cli.md)
-3. [Vue router](language/javascript/vue/vue_router.md)
-
-### Pyton
+### Python
 
 1. [코드스타일](language/python/codestyleguide.md)
 2. [기초\_자료형](language/python/basic_datatype.md)
@@ -32,13 +43,6 @@ Vue
 5. [기초\_모듈과 패키지](language/python/basic_module.md)
 6. [기초\_얕은복사, 깊은복사](language/python/basic_copy.md)
 7. [기초\_객체 지향 프로그래밍](language/python/basic_oop.md)
-
-Django
-
-1. [기초개념](language/python/django/django_basic.md)
-2. [Django로 DB제어 및 CRUD](language/python/django/django_db_crud.md)
-3. [Form & ModelForm](language/python/django/django_form_modelform.md)
-4. [인증 시스템](language/python/django/django_auth_system.md)
 
 ### SQL
 
@@ -49,6 +53,37 @@ Django
 1. [md 기본](language/markdown/md_basic.md)
 
 <br>
+
+## Library, Framework
+
+### React
+
+1. [기초개념](library/react/react_basic.md)
+
+### Vue
+
+1. [기초개념](library/vue/vue_basic.md)
+2. [Vue CLI](library/vue/vue_cli.md)
+3. [Vue router](library/vue/vue_router.md)
+
+### Django
+
+1. [기초개념](library/django/django_basic.md)
+2. [Django로 DB제어 및 CRUD](library/django/django_db_crud.md)
+3. [Form & ModelForm](library/django/django_form_modelform.md)
+4. [인증 시스템](library/django/django_auth_system.md)
+
+## Git, etc.
+
+### Git
+
+1. [Git 기본 명령어(init부터 pull까지) + conflict 해결](git/git/git_basic.md)
+2. [Github repository 재사용하기](git/git/github_repo_reuse.md)
+3. [Git 커밋 수정](git/git/git_edit_commit.md)
+
+### Shell, Kernel
+
+1. [Linux Command(Terminal)](git/shell/linux_cmd.md)
 
 ## CS
 
@@ -79,15 +114,3 @@ Django
 8. [그래프](algorithm/graph.md)
 
 <br>
-
-## 기타
-
-### Git & Github
-
-1. [Git 기본 명령어(init부터 pull까지) + conflict 해결](etc/git_and_github/git_basic.md)
-2. [Github repository 재사용하기](etc/git_and_github/github_repo_reuse.md)
-3. [Git 커밋 수정](etc/git_and_github/git_edit_commit.md)
-
-### Tips
-
-1. [Linux Command(Terminal)](etc/tips/linux_cmd.md)
