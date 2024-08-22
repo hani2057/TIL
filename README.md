@@ -8,7 +8,8 @@
 # TOC
 
 - [Language, etc.](#Language,-etc.)
-  - [Javascript](#Javascript)
+  - [JavaScript](#JavaScript)
+  - [TypeScript](#TypeScript)
   - [CSS](#CSS)
   - [Python](#Python)
   - [SQL](#SQL)
@@ -31,9 +32,13 @@
 
 ## Language, etc.
 
-### Javascript
+### JavaScript
 
 1. [호이스팅](language/javascript/hoisting.md)
+
+### TypeScript
+
+1. [Mapped type](language/typescript/mapped_type.md)
 
 ### CSS
 
