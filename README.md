@@ -18,6 +18,8 @@
   - [React](#React)
   - [Vue](#Vue)
   - [Django](#Django)
+- [DevOps](#DevOps)
+  - [FE deploy](#FE-deploy)
 - [Git, etc.](#Git,-etc.)
   - [Git](#Git)
   - [Shell, Kernel](#Shell,-Kernel)
@@ -82,6 +84,12 @@
 2. [Django로 DB제어 및 CRUD](library/django/django_db_crud.md)
 3. [Form & ModelForm](library/django/django_form_modelform.md)
 4. [인증 시스템](library/django/django_auth_system.md)
+
+## DevOps
+
+### FE deploy
+
+1. [(링크)프론트 배포를 위한 잡다한 사전 지식](devops/fe_deploy/link_fe_deploy_knowledge.md)
 
 ## Git, etc.
 
