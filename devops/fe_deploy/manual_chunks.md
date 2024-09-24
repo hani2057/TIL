@@ -80,4 +80,21 @@ export default defineConfig({
 결과는 요렇게 됐다.
 ![image](https://github.com/user-attachments/assets/f4824941-dd61-4014-a495-7b60f5b7a0f9)
 
-나만 보는 페이지들을 라우터 기준으로 lazy-loading 처리하는 건 추가할지 고민중.
+### 3차 시도
+
+그렇게 다 된 줄 알았는데 빌드한 걸 S3 버킷에 넣어 url로 접근해보니 에러가 떴다.
+![image](https://github.com/user-attachments/assets/f38f0d0f-18f4-4b5f-a41a-1e9cd005ec8d)
+
+manualChunks 설정 부분을 주석처리하고 한꺼번에 빌드했더니 문제 없이 잘 동작했다. chunk를 분리하다 보니 react-quill 라이브러리 의존성 문제가 생긴 모양이다.
+
+gpt한테 물어보니 Vite 설정에서 optimizeDeps에 react-quill 라이브러리를 등록해주면 의존성 문제를 완화할 수 있다고 하여 적용해봤는데 잘 동작하지 않았다. 그래서 manualChunks 옵션 설정으로 직접 chunk 분리하지 않고 react-quill 라이브러리를 lazy loading 으로 처리해서 chunk 분리를 Vite한테 맡겼다. 아래는 그 결과물.
+
+![image](https://github.com/user-attachments/assets/2e7e745e-4e54-4809-9a8b-f0f511443836)
+
+그리고 잘 동작한다!
+
+![image](https://github.com/user-attachments/assets/ce40aed1-b263-4ced-b360-9bf2686f2acc)
+
+### 여담
+
+테스트한다고 계속 빌드하고 S3에 기존 객체 삭제하고 다시 업로드하고를 반복하다보니 CI/CD가 왜 필요한지 느낄 수 있었다. 매우 귀찮다!! 삭제 후 업로드 aws api 쏘는 걸로 만들어서 그냥 deploy 명령어로 처리하고 싶다. 이번에 배포하면서 그냥 같이 해봐버려야겠다.
