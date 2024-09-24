@@ -92,6 +92,7 @@
 ### FE deploy
 
 1. [(링크)프론트 배포를 위한 잡다한 사전 지식](devops/fe_deploy/link_fe_deploy_knowledge.md)
+2. [Vite 번들링 파일 크기 작게 쪼개기(manualChunks)](devops/fe_deploy/manual_chunks.md)
 
 ## Git, etc.
 
