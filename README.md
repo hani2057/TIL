@@ -115,6 +115,7 @@
 3. [Transport Layer](cs/network/transport_layer.md)
 4. [Network Layer](cs/network/network_layer.md)
 5. [Link Layer](cs/network/link_layer.md)
+6. [Vite proxy 설정](cs/network/vite_proxy.md)
 
 ### OS(Operating System)
 
