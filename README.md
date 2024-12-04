@@ -6,27 +6,30 @@
 <br>
 
 # TOC
+- [TIL](#til)
+- [TOC](#toc)
+- [Contents](#contents)
+  - [Language, etc.](#language-etc)
+    - [JavaScript](#javascript)
+    - [TypeScript](#typescript)
+    - [CSS](#css)
+    - [Python](#python)
+    - [SQL](#sql)
+    - [Markdown](#markdown)
+  - [Library, Framework](#library-framework)
+    - [React](#react)
+    - [Vue](#vue)
+    - [Django](#django)
+  - [DevOps](#devops)
+    - [FE deploy](#fe-deploy)
+  - [Git, etc.](#git-etc)
+    - [Git](#git)
+    - [Shell, Kernel](#shell-kernel)
+  - [CS](#cs)
+    - [Network](#network)
+    - [OS(Operating System)](#osoperating-system)
+  - [Algorithm](#algorithm)
 
-- [Language, etc.](#Language,-etc.)
-  - [JavaScript](#JavaScript)
-  - [TypeScript](#TypeScript)
-  - [CSS](#CSS)
-  - [Python](#Python)
-  - [SQL](#SQL)
-  - [Markdown](#Markdown)
-- [Library, Framework](#Library,-Framework)
-  - [React](#React)
-  - [Vue](#Vue)
-  - [Django](#Django)
-- [DevOps](#DevOps)
-  - [FE deploy](#FE-deploy)
-- [Git, etc.](#Git,-etc.)
-  - [Git](#Git)
-  - [Shell, Kernel](#Shell,-Kernel)
-- [CS](#CS)
-  - [Network](#Network)
-  - [OS(Operating System)](<#OS(Operating-System)>)
-- [Algorithm](#Algorithm)
 
 <br>
 
@@ -101,6 +104,7 @@
 1. [Git 기본 명령어(init부터 pull까지) + conflict 해결](git/git/git_basic.md)
 2. [Github repository 재사용하기](git/git/github_repo_reuse.md)
 3. [Git 커밋 수정](git/git/git_edit_commit.md)
+4. [Git hooks - Gitlab, Jira, Slack 연동](git/git/gitlab_jira_slack.md)
 
 ### Shell, Kernel
 
